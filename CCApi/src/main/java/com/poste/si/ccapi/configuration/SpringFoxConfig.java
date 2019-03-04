@@ -30,11 +30,11 @@ public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "BE SDA CC REST API",
-                "CC REST API.",
+                "BE SDA",
+                "Click & Collect REST API",
                 "API TOS",
                 "Terms of service",
-                new Contact("Mario Rossi", "www.example.com", "myeaddress@company.com"),
+                new Contact("Pietro Sordillo", "www.poste.it", "pietro.sordillo@posteitaliane.it"),
                 "License of API",
                 "API license URL",
                 Collections.emptyList());
