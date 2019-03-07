@@ -53,8 +53,7 @@
             <groupId>org.glassfish</groupId>
             <artifactId>javax.faces</artifactId>
             <version>${javax.faces-version}</version>
-        </dependency>
-        
+        </dependency>        
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
