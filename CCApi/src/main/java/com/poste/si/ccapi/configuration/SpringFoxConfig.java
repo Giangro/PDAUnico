@@ -30,7 +30,7 @@ public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "BE SDA",
+                "BE MLP",
                 "Click & Collect REST API",
                 "API TOS",
                 "Terms of service",
