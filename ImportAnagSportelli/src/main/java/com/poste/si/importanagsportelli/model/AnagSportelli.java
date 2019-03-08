@@ -5,7 +5,7 @@
  */
 package com.poste.si.importanagsportelli.model;
 
-//  IdSportello|Tipologia Famiglia Sportello|AL_Country|RAM_Filiale|Frazionario|Denominazione|Caso|Ubicazione|Indirizzo (del servizio)|Note Indirizzo|IdCivico|IdToponimo|CAP|Comune|Localita|Sigla Provincia|Descrizione Provincia|CoordinateX_Gradi|CoordinateY_Gradi|CoordinateX_Metri|CoordinateY_Metri|Stato|Data di attivazione|Data Chiusura definitiva|Chiusura pianificata (Santo Patrono)|Orario consegna inesitate|Predisposti|Attivi1|Attivi2|BackOffice|Note|Telefono|IsCancellato
+//  IdSportello|
 
 import java.util.Objects;
 
@@ -15,9 +15,10 @@ import java.util.Objects;
  * @author Alex
  */
 public class AnagSportelli {
+
     
     private String idSportello;
-    private String tipologiaFamigliaSportello;
+    private String tipologiaFamiglia;
     private String alCountry;
     private String ramFiliale;
     private String frazionario;
@@ -36,8 +37,7 @@ public class AnagSportelli {
     private String coordXGradi;
     private String coordYGradi;
     private String coordXMetri;
-    private String corodYMetri;
-    private String metri;
+    private String corodYMetri;    
     private String stato;
     private String dataAttivazione;
     private String dataChiusuraDefinitiva;
@@ -53,41 +53,40 @@ public class AnagSportelli {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.idSportello);
-        hash = 17 * hash + Objects.hashCode(this.tipologiaFamigliaSportello);
-        hash = 17 * hash + Objects.hashCode(this.alCountry);
-        hash = 17 * hash + Objects.hashCode(this.ramFiliale);
-        hash = 17 * hash + Objects.hashCode(this.frazionario);
-        hash = 17 * hash + Objects.hashCode(this.denominazione);
-        hash = 17 * hash + Objects.hashCode(this.caso);
-        hash = 17 * hash + Objects.hashCode(this.ubicazione);
-        hash = 17 * hash + Objects.hashCode(this.indirizzoServizio);
-        hash = 17 * hash + Objects.hashCode(this.noteIndirizzo);
-        hash = 17 * hash + Objects.hashCode(this.idCivico);
-        hash = 17 * hash + Objects.hashCode(this.idToponimo);
-        hash = 17 * hash + Objects.hashCode(this.cap);
-        hash = 17 * hash + Objects.hashCode(this.comune);
-        hash = 17 * hash + Objects.hashCode(this.localita);
-        hash = 17 * hash + Objects.hashCode(this.siglaProvincia);
-        hash = 17 * hash + Objects.hashCode(this.descrProvincia);
-        hash = 17 * hash + Objects.hashCode(this.coordXGradi);
-        hash = 17 * hash + Objects.hashCode(this.coordYGradi);
-        hash = 17 * hash + Objects.hashCode(this.coordXMetri);
-        hash = 17 * hash + Objects.hashCode(this.corodYMetri);
-        hash = 17 * hash + Objects.hashCode(this.metri);
-        hash = 17 * hash + Objects.hashCode(this.stato);
-        hash = 17 * hash + Objects.hashCode(this.dataAttivazione);
-        hash = 17 * hash + Objects.hashCode(this.dataChiusuraDefinitiva);
-        hash = 17 * hash + Objects.hashCode(this.chiusuraPianificata);
-        hash = 17 * hash + Objects.hashCode(this.orarioConsegnaInesitate);
-        hash = 17 * hash + Objects.hashCode(this.predisposti);
-        hash = 17 * hash + Objects.hashCode(this.attivi1);
-        hash = 17 * hash + Objects.hashCode(this.attivi2);
-        hash = 17 * hash + Objects.hashCode(this.backOffice);
-        hash = 17 * hash + Objects.hashCode(this.note);
-        hash = 17 * hash + Objects.hashCode(this.telefono);
-        hash = 17 * hash + Objects.hashCode(this.isCancellato);
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.idSportello);
+        hash = 53 * hash + Objects.hashCode(this.tipologiaFamiglia);
+        hash = 53 * hash + Objects.hashCode(this.alCountry);
+        hash = 53 * hash + Objects.hashCode(this.ramFiliale);
+        hash = 53 * hash + Objects.hashCode(this.frazionario);
+        hash = 53 * hash + Objects.hashCode(this.denominazione);
+        hash = 53 * hash + Objects.hashCode(this.caso);
+        hash = 53 * hash + Objects.hashCode(this.ubicazione);
+        hash = 53 * hash + Objects.hashCode(this.indirizzoServizio);
+        hash = 53 * hash + Objects.hashCode(this.noteIndirizzo);
+        hash = 53 * hash + Objects.hashCode(this.idCivico);
+        hash = 53 * hash + Objects.hashCode(this.idToponimo);
+        hash = 53 * hash + Objects.hashCode(this.cap);
+        hash = 53 * hash + Objects.hashCode(this.comune);
+        hash = 53 * hash + Objects.hashCode(this.localita);
+        hash = 53 * hash + Objects.hashCode(this.siglaProvincia);
+        hash = 53 * hash + Objects.hashCode(this.descrProvincia);
+        hash = 53 * hash + Objects.hashCode(this.coordXGradi);
+        hash = 53 * hash + Objects.hashCode(this.coordYGradi);
+        hash = 53 * hash + Objects.hashCode(this.coordXMetri);
+        hash = 53 * hash + Objects.hashCode(this.corodYMetri);
+        hash = 53 * hash + Objects.hashCode(this.stato);
+        hash = 53 * hash + Objects.hashCode(this.dataAttivazione);
+        hash = 53 * hash + Objects.hashCode(this.dataChiusuraDefinitiva);
+        hash = 53 * hash + Objects.hashCode(this.chiusuraPianificata);
+        hash = 53 * hash + Objects.hashCode(this.orarioConsegnaInesitate);
+        hash = 53 * hash + Objects.hashCode(this.predisposti);
+        hash = 53 * hash + Objects.hashCode(this.attivi1);
+        hash = 53 * hash + Objects.hashCode(this.attivi2);
+        hash = 53 * hash + Objects.hashCode(this.backOffice);
+        hash = 53 * hash + Objects.hashCode(this.note);
+        hash = 53 * hash + Objects.hashCode(this.telefono);
+        hash = 53 * hash + Objects.hashCode(this.isCancellato);
         return hash;
     }
 
@@ -106,7 +105,7 @@ public class AnagSportelli {
         if (!Objects.equals(this.idSportello, other.idSportello)) {
             return false;
         }
-        if (!Objects.equals(this.tipologiaFamigliaSportello, other.tipologiaFamigliaSportello)) {
+        if (!Objects.equals(this.tipologiaFamiglia, other.tipologiaFamiglia)) {
             return false;
         }
         if (!Objects.equals(this.alCountry, other.alCountry)) {
@@ -158,9 +157,6 @@ public class AnagSportelli {
             return false;
         }
         if (!Objects.equals(this.corodYMetri, other.corodYMetri)) {
-            return false;
-        }
-        if (!Objects.equals(this.metri, other.metri)) {
             return false;
         }
         if (!Objects.equals(this.stato, other.stato)) {
@@ -216,12 +212,12 @@ public class AnagSportelli {
         this.idSportello = idSportello;
     }
 
-    public String getTipologiaFamigliaSportello() {
-        return tipologiaFamigliaSportello;
+    public String getTipologiaFamiglia() {
+        return tipologiaFamiglia;
     }
 
-    public void setTipologiaFamigliaSportello(String tipologiaFamigliaSportello) {
-        this.tipologiaFamigliaSportello = tipologiaFamigliaSportello;
+    public void setTipologiaFamiglia(String tipologiaFamiglia) {
+        this.tipologiaFamiglia = tipologiaFamiglia;
     }
 
     public String getAlCountry() {
@@ -376,14 +372,6 @@ public class AnagSportelli {
         this.corodYMetri = corodYMetri;
     }
 
-    public String getMetri() {
-        return metri;
-    }
-
-    public void setMetri(String metri) {
-        this.metri = metri;
-    }
-
     public String getStato() {
         return stato;
     }
@@ -478,6 +466,6 @@ public class AnagSportelli {
 
     public void setIsCancellato(String isCancellato) {
         this.isCancellato = isCancellato;
-    }    
+    }
     
 }
