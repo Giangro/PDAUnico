@@ -23,6 +23,7 @@
         <commons-io.version>2.6</commons-io.version>
         <apache.tomcat-embed.version>9.0.16</apache.tomcat-embed.version>
         <javax.faces-version>2.4.0</javax.faces-version>
-        <org.xerial.sqlite-jdbc-version>3.25.2</org.xerial.sqlite-jdbc-version>      
+        <org.xerial.sqlite-jdbc-version>3.25.2</org.xerial.sqlite-jdbc-version> 
+        <com.mchange.version>0.9.5.3</com.mchange.version>     
     </properties>
 </project>
