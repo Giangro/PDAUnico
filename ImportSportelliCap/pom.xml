@@ -61,7 +61,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${springframework-boot.version}</version>
                 <configuration>
-                    <mainClass>com.poste.si.ccapi.CCApiMain</mainClass>
+                    <mainClass>com.poste.si.importsportellicap.ImportSportelliCapMain</mainClass>
                     <layout>JAR</layout>
                 </configuration>
                 <executions>
