@@ -7,7 +7,6 @@ package com.poste.si.importsportellicap.controller;
 
 import com.poste.si.importsportellicap.model.SportelliCap;
 import com.poste.si.importsportellicap.service.SportelliCapService;
-import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
