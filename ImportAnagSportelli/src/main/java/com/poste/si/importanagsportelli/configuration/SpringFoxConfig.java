@@ -32,7 +32,7 @@ import java.util.Collections;
  */
 @Configuration
 @EnableSwagger2
-@ComponentScan("com.poste.si.importsportellicap")
+@ComponentScan("com.poste.si.importanagsportelli")
 public class SpringFoxConfig {
 
     private static final String PROPERTY_NAME_DATABASE_DRIVER = "sqlite.driver";

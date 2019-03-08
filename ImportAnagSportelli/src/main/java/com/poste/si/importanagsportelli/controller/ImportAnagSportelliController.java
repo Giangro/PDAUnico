@@ -6,7 +6,7 @@
 package com.poste.si.importanagsportelli.controller;
 
 import com.poste.si.importanagsportelli.model.AnagSportelli;
-import com.poste.si.importanagsportelli.service.anagSportelliService;
+import com.poste.si.importanagsportelli.service.AnagSportelliService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ImportAnagSportelliController {
 
     @Autowired
-    anagSportelliService anagSportelliService;
+    AnagSportelliService anagSportelliService;
 
     @RequestMapping(value = "/allanagsportelli", produces = "application/json")
     @ResponseBody
