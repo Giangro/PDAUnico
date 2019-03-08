@@ -5,7 +5,11 @@
  */
 package com.poste.si.importsportellicap.controller;
 
+import com.poste.si.importsportellicap.model.SportelliCap;
+import com.poste.si.importsportellicap.service.SportelliCapService;
 import java.util.HashMap;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,12 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ImportSportelliCapController {
 
-    @RequestMapping(value = "/status", produces = "application/json")
+    @Autowired
+    SportelliCapService sportelliCapService;
+    
+    @RequestMapping(value = "/allsportellicap", produces = "application/json")
     @ResponseBody
-    public HashMap<Integer, String> getStatus() {
-        HashMap<Integer, String> status = new HashMap<>();
-        status.put(0, "Success");
-        return status;
+    public List<SportelliCap> getAllSportelliCap() {
+        return sportelliCapService.findAllSportelliCapService();
     }
 
 }

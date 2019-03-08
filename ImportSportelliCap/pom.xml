@@ -58,6 +58,18 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>${org.xerial.sqlite-jdbc-version}</version>
         </dependency> 
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.3</version>
+            <type>jar</type>
+        </dependency>
+         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

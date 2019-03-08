@@ -8,6 +8,7 @@ package com.poste.si.importsportellicap.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -16,6 +17,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import com.mchange.v2.c3p0.DataSources;
+import org.sqlite.*;
+import java.beans.PropertyVetoException;
+import java.sql.SQLException;
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 
 import java.util.Collections;
 
@@ -25,9 +32,17 @@ import java.util.Collections;
  */
 @Configuration
 @EnableSwagger2
-@ComponentScan("com.poste.si.importsportellicap.controller")
+@ComponentScan("com.poste.si.importsportellicap")
 public class SpringFoxConfig {
 
+    private static final String PROPERTY_NAME_DATABASE_DRIVER = "sqlite.driver";
+    private static final String PROPERTY_NAME_DATABASE_USERNAME = "sqlite.user";
+    private static final String PROPERTY_NAME_DATABASE_PASSWORD = "sqlite.password";
+    private static final String PROPERTY_NAME_DATABASE_URL = "sqlite.url";
+    
+    @Resource
+    private Environment env;
+    
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "BE MLP",
@@ -71,6 +86,30 @@ public class SpringFoxConfig {
                 .supportedSubmitMethods(UiConfiguration.Constants.DEFAULT_SUBMIT_METHODS)
                 .validatorUrl(null)
                 .build();
+    }
+    
+    @Bean(destroyMethod = "close")
+    public DataSource dataSource() throws PropertyVetoException, SQLException {
+       
+        // configure SQLite
+        SQLiteConfig config = new org.sqlite.SQLiteConfig();
+        config.setReadOnly(true);
+        config.setPageSize(4096); //in bytes
+        config.setCacheSize(2000); //number of pages
+        config.setSynchronous(SQLiteConfig.SynchronousMode.OFF);
+        config.setJournalMode(SQLiteConfig.JournalMode.OFF);
+                
+        // get an unpooled SQLite DataSource with the desired configuration
+        String url = env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL);
+        SQLiteDataSource unpooled = new SQLiteDataSource( config );
+        unpooled.setUrl(url);
+
+        //logger.debug("Database URL:"+url);
+        
+        // get a pooled c3p0 DataSource that wraps the unpooled SQLite DataSource
+        DataSource dataSource = DataSources.pooledDataSource( unpooled );
+        
+        return dataSource;
     }
 
 }
