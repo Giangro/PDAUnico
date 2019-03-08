@@ -7,7 +7,6 @@ package com.poste.si.importsportellicap.service;
 
 import com.poste.si.importsportellicap.dao.SportelliCapDao;
 import com.poste.si.importsportellicap.model.SportelliCap;
-import com.poste.si.importsportellicap.scheduledimport.ImportSportelliCapTask;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
