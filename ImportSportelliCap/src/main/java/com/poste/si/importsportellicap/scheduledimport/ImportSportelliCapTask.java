@@ -25,7 +25,7 @@ public class ImportSportelliCapTask {
     
     @Scheduled(fixedRate = 5000)
     public void doImportSportelliCapTask() {
-        logger.info("The time is now {}", dateFormat.format(new Date()));
+        logger.info("Start scheduled import for SportelliCap. The time is now {}", dateFormat.format(new Date()));
     }
      
 }
