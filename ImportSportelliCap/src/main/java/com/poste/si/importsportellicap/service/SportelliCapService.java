@@ -32,4 +32,8 @@ public class SportelliCapService {
         return sportelliCapDao.findAll();
     }
     
+    public  List<SportelliCap> findInfoByCapService(String cap) {
+        return sportelliCapDao.findInfoByCap(cap);
+    }
+    
 }

@@ -16,7 +16,7 @@ import java.util.List;
 
 public interface SportelliCapDao {
     //public void save(String cap);
-    //public List<SportelliCap> findByCap(String Cap);  
+    public List<SportelliCap> findInfoByCap(String Cap);  
     public List<SportelliCap> findAll();  
 }
 

@@ -52,6 +52,27 @@ public class SportelliCapDaoImpl
         // Regione|Sigla_PV|Provincia|Cod_Comune|Comune|Localita|CAP|ID_Servizio|Descrizione_Servizio|Frazionario
         String sql = "SELECT REGIONE, SIGLAPV, PROVINCIA, CODCOMUNE, COMUNE, LOCALITA, CAP, IDSERVIZIO, FRAZIONARIO FROM "
                 + sportellicaptable;
+        
+        logger.info ("findAll - query is "+sql);
+        
+        List<SportelliCap> sportellicaplist = this.jdbcTemplate.query(sql,
+                new BeanPropertyRowMapper(SportelliCap.class));
+
+        return sportellicaplist;
+
+    }
+    
+    @Override
+    public List<SportelliCap> findInfoByCap(String cap) {
+        
+        // Regione|Sigla_PV|Provincia|Cod_Comune|Comune|Localita|CAP|ID_Servizio|Descrizione_Servizio|Frazionario
+        String sql = "SELECT REGIONE, SIGLAPV, PROVINCIA, CODCOMUNE, COMUNE, LOCALITA, CAP, IDSERVIZIO, FRAZIONARIO FROM "
+                + sportellicaptable
+                + " WHERE CAP = "
+                + "\""+cap+"\"";
+
+        logger.info ("findInfoByCap - query is "+sql);
+        
         List<SportelliCap> sportellicaplist = this.jdbcTemplate.query(sql,
                 new BeanPropertyRowMapper(SportelliCap.class));
 
